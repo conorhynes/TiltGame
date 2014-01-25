@@ -15,7 +15,7 @@ public class Grid : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		generateNew ();
 	}
 	
 	// Update is called once per frame
@@ -30,34 +30,41 @@ public class Grid : MonoBehaviour {
 
 		//Insert grid generation code here
 
-		/*for(int i = 0 ; i < gridList.GetLength ; i++)
+		for(int i = 0 ; i < gridList.Length ; i++)
 		{
-			for(int j = 0 ; j < gridList[i].GetLength ; j++)
+			for(int j = 0 ; j < gridList[i].Length ; j++)
 			{
 				switch(gridList[i][j])
 				{
-				case types.entry:
+				case (int)types.entry:
 					//Generate Type entry
 					break;
-				case types.exit:
+				case (int)types.exit:
 					//Generate Type exit
 					break;
-				case types.corridor:
+				case (int)types.corridor:
+					GameObject corridor = (GameObject)Resources.Load ("CorridorObject");
+					Vector3 pos = new Vector3(0, 0, 0);
+					Rigidbody gameObjectsRigidBody = corridor.AddComponent<Rigidbody>();
+					gameObjectsRigidBody.mass = 1;
+					gameObjectsRigidBody.useGravity = false;
+					corridor.rigidbody.position = pos;
+					corridor.layer = 1;
 					//Generate Type corridor
 					break;
-				case types.crossRoad:
+				case (int)types.crossRoad:
 					//Generate Type crossroad
 					break;
-				case types.leftTurn:
+				case (int)types.leftTurn:
 					//Generate Type leftTurn
 					break;
-				case types.rightTurn:
+				case (int)types.rightTurn:
 					//Generate Type Right Turn
 					break;
-				case types.teeJunc:
+				case (int)types.teeJunc:
 					//Generate Type Tee Junc
 					break;
-				case types.wall:
+				case (int)types.wall:
 					//Generate Type Wall
 					break;
 				default:
@@ -65,6 +72,6 @@ public class Grid : MonoBehaviour {
 					break;
 				}
 			}
-		}*/
+		}
 	}
 }
