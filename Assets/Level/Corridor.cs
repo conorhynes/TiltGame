@@ -5,7 +5,7 @@ public class Corridor {
 	public Corridor(Vector3 pos)
 	{
 		GameObject ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
-		Rigidbody gameObjectsRigidBody = ob.AddComponent<Rigidbody>();
+		Rigidbody gameObjectsRigidBody = ground.AddComponent<Rigidbody>();
 		gameObjectsRigidBody.mass = 1;
 		gameObjectsRigidBody.useGravity = false;
 	}
