@@ -25,8 +25,8 @@ public class Grid : MonoBehaviour {
 
 	void generateNew()
 	{
-		int[][] gridList = new int[][] {new int[]{(int)types.entry,(int)types.corridor,(int)types.corridor,(int)types.leftTurn,(int)types.wall,(int)types.wall},
-						new int[]{(int)types.wall,(int)types.wall,(int)types.rightTurn,(int)types.corridor,(int)types.corridor,(int)types.exit}};
+		int[][] gridList = new int[][] {new int[]{(int)types.entry,(int)types.entry,(int)types.corridor,(int)types.leftTurn,(int)types.wall,(int)types.wall},
+						new int[]{(int)types.wall,(int)types.wall,(int)types.rightTurn,(int)types.crossRoad,(int)types.leftTurn,(int)types.exit}};
 
 		//Insert grid generation code here
 
@@ -43,9 +43,7 @@ public class Grid : MonoBehaviour {
 					//Generate Type exit
 					break;
 				case (int)types.corridor:
-					GameObject corridor = (GameObject)Resources.Load ("CorridorObject");
-					Vector3 pos = new Vector3(0, 0, 0);
-					corridor.layer = 1;
+					GameObject corridor = (GameObject)Resources.Load ("CorridorObj2");
 					//Generate Type corridor
 					break;
 				case (int)types.crossRoad:
