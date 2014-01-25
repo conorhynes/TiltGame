@@ -85,28 +85,6 @@ public class SpawnLevel : MonoBehaviour
 			gameObjectsRigidBody.mass = 1;
 			gameObjectsRigidBody.useGravity = false;
 			ob.rigidbody.position = pos;
-			ob.AddComponent("RandomMovement");
-			ob.AddComponent("ObjectCollision");
-			ob.AddComponent ("MagneticPull");
-			
-			RandomMovement move;
-			move = ob.GetComponent<RandomMovement>();
-			move.Colour = rand;
-			if (rand == 1)
-			{
-				move.renderer.material.color = Color.blue;
-				ob.layer = 9;
-			}
-			else if (rand == 2)
-			{
-				move.renderer.material.color = Color.green;
-				ob.layer = 10;
-			}
-			else
-			{
-				move.renderer.material.color = Color.red;
-				ob.layer = 8;
-			}
 		}
 	}
 }

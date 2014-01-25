@@ -25,12 +25,12 @@ public class Grid : MonoBehaviour {
 
 	void generateNew()
 	{
-		int[][] gridList = {{types.entry,types.corridor,types.corridor,types.leftTurn,types.wall,types.wall},
-							{types.wall,types.wall,types.rightTurn,types.corridor,types.corridor,types.exit}};
+		int[][] gridList = new int[][] {new int[]{(int)types.entry,(int)types.corridor,(int)types.corridor,(int)types.leftTurn,(int)types.wall,(int)types.wall},
+						new int[]{(int)types.wall,(int)types.wall,(int)types.rightTurn,(int)types.corridor,(int)types.corridor,(int)types.exit}};
 
 		//Insert grid generation code here
 
-		for(int i = 0 ; i < gridList.GetLength ; i++)
+		/*for(int i = 0 ; i < gridList.GetLength ; i++)
 		{
 			for(int j = 0 ; j < gridList[i].GetLength ; j++)
 			{
@@ -65,6 +65,6 @@ public class Grid : MonoBehaviour {
 					break;
 				}
 			}
-		}
+		}*/
 	}
 }
