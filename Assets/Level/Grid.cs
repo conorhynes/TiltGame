@@ -45,10 +45,6 @@ public class Grid : MonoBehaviour {
 				case (int)types.corridor:
 					GameObject corridor = (GameObject)Resources.Load ("CorridorObject");
 					Vector3 pos = new Vector3(0, 0, 0);
-					Rigidbody gameObjectsRigidBody = corridor.AddComponent<Rigidbody>();
-					gameObjectsRigidBody.mass = 1;
-					gameObjectsRigidBody.useGravity = false;
-					corridor.rigidbody.position = pos;
 					corridor.layer = 1;
 					//Generate Type corridor
 					break;
